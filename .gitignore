@@ -1,2 +1,4 @@
 *.pyc
 secret_key.py
+.sass-cache
+.DS_Store
