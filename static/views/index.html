@@ -1,0 +1,24 @@
+<div>
+    <div class="note">
+        <div class="header">
+            Create a new note
+            <span class="float-right">
+                {{numWords(content)}} / {{maxWords}}
+            </span>
+        </div>
+        <div class="content">
+            <input class="input" placeholder="Title" ng-model="title" />
+            <textarea name="content" class="input input-larger" ng-model="content" placeholder="Some short note about today"></textarea>
+            <a ng-click="add()" href="#" class="button">Add Note</a>
+        </div>
+    </div>
+    <div class="notes">
+        <div class="note" ng-repeat="note in notes">
+            <div class="header">
+                {{note.title}}
+                <a class="x float-right" href="#" ng-click="delete(note._id)">&times;</a>
+            </div>
+            <div class="content" ng-bind-html-unsafe="markdown(note.content)"></div>
+        </div>
+    </div>
+</div>
