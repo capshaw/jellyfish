@@ -7,10 +7,8 @@ from util import *
 
 notes_api = Blueprint('notes_api', __name__)
 
-# @notes_api.route("/note/")
-# @notes_api.route('/note/<transaction_id>', methods=['POST'])
-
 # GET to delete everything
+# TODO: remove this dangerous API
 @notes_api.route('/notes/delete', methods=['GET'])
 def delete_notes():
     pymongo.MongoClient()[DB_NAME][NOTES_TABLE_NAME].remove()
@@ -37,9 +35,8 @@ def post_note():
 # DELETE a note by id
 @notes_api.route('/notes/<id>', methods=['DELETE'])
 def delete_note(id):
-    print "Deleting " + id
     table = pymongo.MongoClient()[DB_NAME][NOTES_TABLE_NAME]
-    print table.remove({
+    table.remove({
         "_id": ObjectId(id)
     })
     return jsonify({})
