@@ -1,9 +1,12 @@
 $standard-unit: 20px;
 $primary-color: #49BAA5;
+$content-max-width: 600px;
 
 body {
     font-family: 'Open Sans', sans-serif;
     background: #eee;
+    padding: 0;
+    margin: 0;
 }
 
 ::-webkit-input-placeholder { color: $primary-color; }
@@ -48,7 +51,7 @@ p:last-child {
 .note {
     margin: auto;
     background: #fff;
-    max-width: 600px;
+    max-width: $content-max-width;
     margin-top: $standard-unit;
 
     .content {
@@ -78,4 +81,15 @@ p:last-child {
     &:hover {
         background: lighten($primary-color, 10%);
     }
+}
+
+.header {
+    background: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.nav {
+    max-width: $content-max-width;
+    padding: $standard-unit;
+    margin: auto;
 }

@@ -7,21 +7,15 @@ from util import *
 
 notes_api = Blueprint('notes_api', __name__)
 
-# GET to delete everything
-# TODO: remove this dangerous API
-@notes_api.route('/notes/delete', methods=['GET'])
-def delete_notes():
-    pymongo.MongoClient()[DB_NAME][NOTES_TABLE_NAME].remove()
-    return jsonify({"sounds": "good"})
-
 # POSTs a new note to the server.
+# TODO: authentication
 @notes_api.route('/notes/', methods=['POST'])
 def post_note():
     try:
         content = request.json['content']
         title = request.json['title']
     except ValueError:
-        return jsonify({})
+        return jsonify({}) # TODO: invalid access exception
 
     table = pymongo.MongoClient()[DB_NAME][NOTES_TABLE_NAME]
     note = {
@@ -33,6 +27,7 @@ def post_note():
     return jsonify({})
 
 # DELETE a note by id
+# TODO: Authentication
 @notes_api.route('/notes/<id>', methods=['DELETE'])
 def delete_note(id):
     table = pymongo.MongoClient()[DB_NAME][NOTES_TABLE_NAME]

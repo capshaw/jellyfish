@@ -3,46 +3,9 @@ angular.module('notesApp')
 
         var converter = new Showdown.converter();
 
-        $scope.maxWords = 100;
-
         $scope.parseDate = function (date) {
             return new Date(Date.parse(date)).toString();
         }
-
-        $scope.numWords = function (block) {
-            if (block == null) {
-                return 0;
-            }
-            return block.split(" ").length;
-        }
-
-        $scope.add = function () {
-            var data = {
-                title: $scope.title,
-                content: $scope.content
-            }
-            $http({method: 'POST', url: '/notes/', data: data}).
-              success(function(data, status, headers, config) {
-                // this callback will be called asynchronously
-                // when the response is available
-              }).
-              error(function(data, status, headers, config) {
-                // called asynchronously if an error occurs
-                // or server returns response with an error status.
-              });
-        };
-
-        $scope.delete = function (id) {
-            $http({method: 'DELETE', url: '/notes/' + id}).
-              success(function(data, status, headers, config) {
-                // this callback will be called asynchronously
-                // when the response is available
-              }).
-              error(function(data, status, headers, config) {
-                // called asynchronously if an error occurs
-                // or server returns response with an error status.
-              });
-        };
 
         $http({method: 'GET', url: '/notes/'}).
           success(function(data, status, headers, config) {

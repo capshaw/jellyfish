@@ -6,6 +6,10 @@ notesApp.config(function($routeProvider) {
             templateUrl: '/static/views/index.html',
             controller: 'NotesCtrl'
         }).
+        when('/add', {
+            templateUrl: '/static/views/add.html',
+            controller: 'AddCtrl'
+        }).
         otherwise({
             redirectTo: '/'
         });
