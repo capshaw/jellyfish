@@ -4,10 +4,10 @@
             Jellyfish
     </div>
 
-    <div class='user' ng-show='user'>
+    <a class='right-box' href='' ng-click='logout()'>Logout</a>
+    <div class='right-box' ng-show='user'>
         <div class='user-image' ng-show='user' ng-style="{'background-image': 'url(' + user.image_url + ')'}"></div>
         Hello, {{user.name}}!
-        <a href='' ng-click='logout()'>Logout</a>
     </div>
 </div>
 
@@ -15,7 +15,7 @@
     <a ng-href='/#/add' class='button primary'>New Entry</a>
     <div class='entries' ng-show='entries.length > 0'>
         <div class='entry' ng-repeat='entry in entries'>
-            <div ng-bind-html-unsafe='markdown(entry.content)'></div>
+            <div class='writing' ng-bind-html-unsafe='markdown(entry.content)'></div>
             <a href='' ng-click='deleteEntry(entry.id, $index)'>Delete</a>
             <a href=''>Edit</a>
         </div>

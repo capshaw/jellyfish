@@ -78,13 +78,13 @@ body, html {
         font-weight: bold;
     }
 
-    .user {
+    .right-box {
         display: inline-block;
         height: $height;
         float: right;
         border-left: 1px solid #222;
         height: 100%;
-        padding: 0 2 * $standard-padding 0 $standard-padding;
+        padding: 0 $standard-padding;
     }
 
     .user-image {
@@ -97,11 +97,16 @@ body, html {
 
     a {
         color: #fff;
+        text-decoration: none;
+
+        &:hover {
+            background: #444;
+        }
     }
 }
 
 .content {
-    max-width: 1000px;
+    max-width: 800px;
     margin: auto;
     margin-top: $standard-padding * 2;
 
@@ -114,6 +119,15 @@ body, html {
         background: #fff;
         padding: $standard-padding * 2;
         margin-top: $standard-padding;
+    }
+
+    .writing {
+        font-family: 'Droid Serif', sans-serif;
+        font-size: 16px;
+        line-height: 1.5em;
+        font-style: normal;
+        font-weight: 400;
+        color: rgb(34, 34, 34);
     }
 }
 

@@ -14,8 +14,10 @@ def get_entries():
     # Get all entries that the currently logged-in user has posted.
     user = session['user']
     entries = Entry.query.filter_by(user_id=user.id).all()
+    entries = [e.serialize() for e in entries]
+    entries.reverse()
 
-    return jsonify({ 'entries': [e.serialize() for e in entries]})
+    return jsonify({ 'entries': entries })
 
 @entries_api.route('/entries', methods=['POST'])
 @login_required
