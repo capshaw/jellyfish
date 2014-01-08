@@ -1,9 +1,0 @@
-<div ng-include="'/static/views/header.html'"></div>
-<div class="notes">
-    <div class="note" ng-repeat="note in notes">
-        <div class="header">
-            {{note.title}}
-        </div>
-        <div class="content" ng-bind-html-unsafe="markdown(note.content)"></div>
-    </div>
-</div>
