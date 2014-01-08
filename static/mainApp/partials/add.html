@@ -1,7 +1,9 @@
 <div class='left'>
     <textarea name='content' class='unstyled-input' ng-model='content' spellcheck='false'></textarea>
 </div>
-<div class='right' ng-bind-html-unsafe='markdown(content)'></div>
+<div class='right entries'>
+    <div class='writing' ng-bind-html-unsafe='markdown(content)'></div>
+</div>
 <div class='despot'>
     <a href='#' class='button'>Cancel</a>
     <a ng-click='postEntry()' href='' class='button primary'>Add Note</a>

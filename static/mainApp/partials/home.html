@@ -17,6 +17,7 @@
         <div class='entry' ng-repeat='entry in entries'>
             <div class='writing' ng-bind-html-unsafe='markdown(entry.content)'></div>
             <a href='' ng-click='deleteEntry(entry.id, $index)'>Delete</a>
+            &middot;
             <a href=''>Edit</a>
         </div>
     </div>
