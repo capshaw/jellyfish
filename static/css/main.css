@@ -82,6 +82,9 @@ body, html {
     font-style: normal;
     font-weight: 400;
     color: #222222; }
+    .content .writing p:first-child {
+      margin-top: 0;
+      padding-top: 0; }
 
 .unstyled-input {
   font-family: monospace;
