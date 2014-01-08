@@ -38,6 +38,28 @@ body, html {
     }
 }
 
+.small-fish {
+    background: url('/static/img/jellyfish.png') no-repeat center center;
+    background-size: contain;
+    display: inline-block;
+    vertical-align: middle;
+    margin: $standard-padding;
+
+    height: 30px;
+    width: 30px;
+
+    &.white {
+        background: url('/static/img/jellyfish_white.png') no-repeat center center;
+        background-size: contain;
+    }
+
+    &.center {
+        display: block;
+        margin: auto;
+        margin-bottom: $standard-padding;
+    }
+}
+
 //
 // Main Application
 //

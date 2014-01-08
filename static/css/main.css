@@ -20,6 +20,22 @@ body, html {
     .button.primary:hover {
       background: #8abe79; }
 
+.small-fish {
+  background: url("/static/img/jellyfish.png") no-repeat center center;
+  background-size: contain;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px;
+  height: 30px;
+  width: 30px; }
+  .small-fish.white {
+    background: url("/static/img/jellyfish_white.png") no-repeat center center;
+    background-size: contain; }
+  .small-fish.center {
+    display: block;
+    margin: auto;
+    margin-bottom: 10px; }
+
 .header {
   background: #333533;
   line-height: 60px;
