@@ -1,0 +1,11 @@
+<div class='login-container'>
+    <form>
+        <input placeholder='Email' spellcheck='false' ng-model='email' class='text-input'>
+        <input placeholder='Password' type='password' ng-model='password' class='text-input'>
+        <input type='submit' ng-click='attemptLogin()' class='submit' value='Sign In'>
+    </form>
+
+    <div class='failed-login' ng-class="{'active': failedLogin}">
+        Sorry, that didn't work!
+    </div>
+</div>

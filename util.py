@@ -1,27 +1,41 @@
-try:
-    import simplejson as json
-except ImportError:
-    try:
-        import json
-    except ImportError:
-        raise ImportError
-import datetime
-from bson.objectid import ObjectId
-from werkzeug import Response
+import config
+import random
 
-# from flask import (jsonify)
+from functools import wraps
+from flask import g, request, redirect, url_for, session
+from werkzeug.wrappers import BaseResponse as Response
 
-# https://gist.github.com/akhenakh/2954605
+from hashlib import sha512
 
-class MongoJsonEncoder(json.JSONEncoder):
-    def default(self, obj):
-        if isinstance(obj, (datetime.datetime, datetime.date)):
-            return obj.isoformat()
-        elif isinstance(obj, ObjectId):
-            return unicode(obj)
-        return json.JSONEncoder.default(self, obj)
+# Various reusable responses.
+empty_response = Response('', status=201)
+not_found = Response('Not Found', status=404)
+not_authorized = Response('Not Authorized', status=401)
+bad_request = Response('Bad Request', status=400)
 
-def jsonify(*args, **kwargs):
-    """ jsonify with support for MongoDB ObjectId
-    """
-    return Response(json.dumps(dict(*args, **kwargs), cls=MongoJsonEncoder), mimetype='application/json')
+ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+
+def hash_user_password(user):
+    user.password = password_hash(user.password, user.salt, config.hash_key)
+    return user
+
+def password_hash(string, salt, secret_key):
+    return sha512(salt + string + secret_key + secret_key + salt).hexdigest()
+
+def generate_salt(how_long):
+    return ''.join(random.choice(ALPHABET) for i in range(how_long))
+
+def is_session_current():
+    # Returns True if there is a current, valid, session. Else, returns False.
+    if 'user' in session:
+        return True
+    return False
+
+# TODO: make this redirect to the page that the user originally requested
+def login_required(f):
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if 'user' not in session:
+            return redirect('/')
+        return f(*args, **kwargs)
+    return decorated_function

@@ -1,4 +1,5 @@
+config.py
+dev/
+static/css/.sass-cache/
 *.pyc
-secret_key.py
-.sass-cache
 .DS_Store
