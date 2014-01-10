@@ -12,6 +12,10 @@ mainApp.config(function($routeProvider) {
             templateUrl: '/static/mainApp/partials/add.html',
             controller: 'AddCtrl'
         }).
+        when('/edit/:entryId', {
+            templateUrl: '/static/mainApp/partials/add.html',
+            controller: 'AddCtrl'
+        }).
         otherwise({
             redirectTo: '/'
         });

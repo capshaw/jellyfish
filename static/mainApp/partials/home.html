@@ -18,7 +18,7 @@
             <div class='writing' ng-bind-html-unsafe='markdown(entry.content)'></div>
             <a href='' ng-click='deleteEntry(entry.id, $index)'>Delete</a>
             &middot;
-            <a href=''>Edit</a>
+            <a ng-href='/#/edit/{{entry.id}}'>Edit</a>
         </div>
     </div>
     <div class='entry' ng-show='entries.length == 0'>
