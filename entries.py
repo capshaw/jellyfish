@@ -40,7 +40,7 @@ def update_entry(id):
     user = session['user']
     entry = Entry.query.filter_by(id=id).first()
 
-    if entry.user_id != user.id:
+    if not entry or entry.user_id != user.id:
         return not_authorized
 
     # Make sure that the request actually has content.
