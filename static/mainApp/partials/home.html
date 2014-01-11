@@ -1,8 +1,10 @@
 <div class='header'>
-    <div class='title'>
+<!--     <div class='title'>
             <div class='small-fish white'></div>
             Jellyfish
     </div>
+ -->
+    &nbsp; <!-- HACK: need to remove float -->
 
     <a class='right-box' href='' ng-click='logout()'>Logout</a>
     <div class='right-box' ng-show='user'>
@@ -13,15 +15,15 @@
 
 <div class='content'>
     <a ng-href='/#/add' class='button primary'>New Entry</a>
-    <div class='entries' ng-show='entries.length > 0'>
+    <div class='entries'>
         <div class='entry' ng-repeat='entry in entries'>
             <div class='writing' ng-bind-html-unsafe='markdown(entry.content)'></div>
             <a href='' ng-click='deleteEntry(entry.id, $index)'>Delete</a>
             &middot;
             <a ng-href='/#/edit/{{entry.id}}'>Edit</a>
         </div>
-    </div>
-    <div class='entry' ng-show='entries.length == 0'>
-        There are no entries yet!
+        <div class='entry' ng-show='entries.length == 0'>
+            <p class='writing'>There are no entries yet! You should fix that by writing one now :)</p>
+        </div>
     </div>
 </div>
