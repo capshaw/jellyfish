@@ -21,4 +21,7 @@ app.register_blueprint(feed_api)
 # Start the application on running of this file.
 if __name__ == "__main__":
     app.config['TRAP_BAD_REQUEST_ERRORS'] = True
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')
+
+    # Note: the parameter "host='0.0.0.0'" allows one to view flask on the
+    # local network at the host's public IP address.

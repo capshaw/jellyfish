@@ -6,13 +6,15 @@ from sqlalchemy import desc
 from models import Entry
 from util import *
 from math import ceil
+from lib.cors import crossdomain
 
 feed_api = Blueprint('feed_api', __name__)
 
 entries_per_page = 2
 
-@feed_api.route('/feed/<int:user_id>', defaults={'page': 1}, methods=['GET'])
-@feed_api.route('/feed/<int:user_id>/<int:page>', methods=['GET'])
+@feed_api.route('/feed/<int:user_id>/<int:page>', methods=['GET', 'OPTIONS'])
+@crossdomain(origin='*', methods=['GET', 'OPTIONS'],
+    headers=['X-Requested-With', 'Content-Type', 'Origin'])
 def get_feed(user_id, page):
 
     if page < 1:

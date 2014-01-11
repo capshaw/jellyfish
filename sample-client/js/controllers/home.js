@@ -30,11 +30,11 @@ angular.module('client')
 
         $scope.previousPage = function () {
             $scope.getFeed(user, $scope.page - 1);
-        }
+        };
 
         $scope.nextPage = function () {
             $scope.getFeed(user, $scope.page + 1);
-        }
+        };
 
         $scope.getFeed(user, 1);
     });
