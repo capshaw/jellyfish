@@ -12,8 +12,8 @@ entries_api = Blueprint('entries_api', __name__)
 def get_entries():
 
     # Get all entries that the currently logged-in user has posted.
-    user = session['user']
-    entries = Entry.query.filter_by(user_id=user.id).all()
+    user_id = session['user_id']
+    entries = Entry.query.filter_by(user_id=user_id).all()
     entries = [e.serialize() for e in entries]
     entries.reverse()
 
@@ -24,10 +24,10 @@ def get_entries():
 def get_entry(id):
 
     # Make sure the user has access to that entry.
-    user = session['user']
-    entry = Entry.query.filter_by(id=id).first()
+    user_id = session['user_id']
+    entry = Entry.query.filter_by(id=user_id).first()
 
-    if not entry or entry.user_id != user.id:
+    if not entry or entry.user_id != user_id:
         return not_authorized
 
     return jsonify({ 'entry': entry.serialize() })
@@ -37,10 +37,10 @@ def get_entry(id):
 def update_entry(id):
 
     # Make sure the user has access to that entry.
-    user = session['user']
+    user_id = session['user_id']
     entry = Entry.query.filter_by(id=id).first()
 
-    if not entry or entry.user_id != user.id:
+    if not entry or entry.user_id != user_id:
         return not_authorized
 
     # Make sure that the request actually has content.
@@ -63,8 +63,8 @@ def post_new_entry():
     content = request.json['content']
 
     # Save to the database and return content for confirmation.
-    user = session['user']
-    new_entry = Entry(user.id, content)
+    user_id = session['user_id']
+    new_entry = Entry(user_id, content)
 
     database.db_session.add(new_entry)
     database.db_session.commit()

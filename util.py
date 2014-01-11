@@ -27,7 +27,7 @@ def generate_salt(how_long):
 
 def is_session_current():
     # Returns True if there is a current, valid, session. Else, returns False.
-    if 'user' in session:
+    if 'user_id' in session:
         return True
     return False
 
@@ -35,7 +35,7 @@ def is_session_current():
 def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
-        if 'user' not in session:
+        if 'user_id' not in session:
             return redirect('/')
         return f(*args, **kwargs)
     return decorated_function

@@ -28,16 +28,16 @@ def login():
     if user.password != hashed_password:
         return not_authorized
     else:
-        session['user'] = user
-        return jsonify(name=session['user'].name,
-                      email=session['user'].email,
-                      id=session['user'].id)
+        session['user_id'] = user.id
+        return jsonify(name=user.name,
+                      email=user.email,
+                      id=user.id)
 
 @authenticate_api.route('/logout', methods=['POST'])
 def logout():
     # Remove the current user from the session.
-    if 'user' in session:
-        session.pop('user', None)
+    if 'user_id' in session:
+        session.pop('user_id', None)
         return empty_response
     else:
         return not_authorized
@@ -45,9 +45,11 @@ def logout():
 @authenticate_api.route('/user')
 def user():
     # Get information about the current user.
-    if 'user' in session:
-        return jsonify(name=session['user'].name,
-                      email=session['user'].email,
-                      id=session['user'].id)
+    if 'user_id' in session:
+        user_id = session['user_id']
+        user = User.query.filter_by(id=user_id).first()
+        return jsonify(name=user.name,
+                      email=user.email,
+                      id=user.id)
     else:
         return not_authorized
