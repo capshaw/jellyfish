@@ -1,0 +1,23 @@
+<em>This is just a proof-of-concept client. Nothing too exciting here!</em>
+
+<p>
+    Page {{page}} of {{totalPages}}
+    <a ng-show='page > 1' href='' ng-click='previousPage()'>
+        &lt; previous
+    </a>
+    &nbsp;
+    <a ng-show='page < totalPages' href='' ng-click='nextPage()'>
+        next &gt;
+    </a>
+</p>
+<hr>
+<div class='entries' ng-show='entries.length > 0'>
+    <div class='entry' ng-repeat='entry in entries'>
+        <div ng-bind-html-unsafe='markdown(entry.content)'></div>
+        <hr> <!-- Everyone loves HR tags, right!? -->
+    </div>
+</div>
+
+<p ng-show='!entries'>
+    There are no entries!
+</p>
