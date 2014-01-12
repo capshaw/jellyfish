@@ -12,18 +12,20 @@ To run jellyfish you'll need to create a new file called `config.py` that contai
 
 You'll also need to instantiate a database, and create an initial user. (There's currently no user-friendly way of creating users or signing up.)  Your bootstrapping function could look something like this:
 
-    from models import User
-    import util
-    import database
+```python
+from models import User
+import util
+import database
 
-    salt = util.generate_salt(64)
-    user = User('User Name', 'user.email@email.com', 'Password', salt)
-    util.hash_user_password(user)
+salt = util.generate_salt(64)
+user = User('User Name', 'user.email@email.com', 'Password', salt)
+util.hash_user_password(user)
 
-    database.init_db()
-    database.db_session.add(user)
-    database.db_session.commit()
-    User.query.all()
+database.init_db()
+database.db_session.add(user)
+database.db_session.commit()
+User.query.all()
+```
 
 After that, you should be able to run `main.py` and be on your way!
 
