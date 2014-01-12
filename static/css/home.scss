@@ -1,0 +1,76 @@
+@import "constants.scss";
+
+.header {
+    $height: 60px;
+
+    background: #333533;
+    line-height: $height;
+    color: #fff;
+    text-align: right;
+
+    .right-box {
+        display: inline-block;
+        height: $height;
+        border-left: 1px solid #222;
+        height: 100%;
+        padding: 0 $standard-padding * 2;
+    }
+
+    .user-image {
+        height: 40px;
+        width: 40px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: $standard-padding;
+    }
+
+    a {
+        color: #fff;
+        text-decoration: none;
+
+        &:hover {
+            background: #444;
+        }
+    }
+}
+
+.content {
+    max-width: 800px;
+    margin: auto;
+    margin-top: $standard-padding * 2;
+}
+
+.entries {
+    .add-entry {
+        background: $accent;
+        padding: $standard-padding;
+    }
+
+    .entry {
+        background: #fff;
+        padding: $standard-padding * 2;
+        margin-top: $standard-padding;
+    }
+
+    .writing {
+        font-family: 'Droid Serif', sans-serif;
+        font-size: 16px;
+        line-height: 1.5em;
+        font-style: normal;
+        font-weight: 400;
+        color: rgb(34, 34, 34);
+
+        p:first-child {
+            margin-top: 0;
+            padding-top: 0;
+        }
+    }
+
+    a {
+        color: rgb(34, 34, 34);
+
+        &:hover {
+            color: rgb(100, 100, 100);
+        }
+    }
+}

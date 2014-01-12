@@ -1,0 +1,49 @@
+.header {
+  background: #333533;
+  line-height: 60px;
+  color: #fff;
+  text-align: right; }
+  .header .right-box {
+    display: inline-block;
+    height: 60px;
+    border-left: 1px solid #222;
+    height: 100%;
+    padding: 0 20px; }
+  .header .user-image {
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px; }
+  .header a {
+    color: #fff;
+    text-decoration: none; }
+    .header a:hover {
+      background: #444; }
+
+.content {
+  max-width: 800px;
+  margin: auto;
+  margin-top: 20px; }
+
+.entries .add-entry {
+  background: #6cad57;
+  padding: 10px; }
+.entries .entry {
+  background: #fff;
+  padding: 20px;
+  margin-top: 10px; }
+.entries .writing {
+  font-family: 'Droid Serif', sans-serif;
+  font-size: 16px;
+  line-height: 1.5em;
+  font-style: normal;
+  font-weight: 400;
+  color: #222222; }
+  .entries .writing p:first-child {
+    margin-top: 0;
+    padding-top: 0; }
+.entries a {
+  color: #222222; }
+  .entries a:hover {
+    color: #646464; }

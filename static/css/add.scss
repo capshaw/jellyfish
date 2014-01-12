@@ -1,0 +1,43 @@
+@import "constants.scss";
+
+.unstyled-input {
+    font-family: monospace;
+    width: 100%;
+    margin: 0;
+    background: none;
+    outline: none;
+    border: none;
+    color: #eee;
+    font-size: 1em;
+}
+
+.left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 50%;
+    bottom: 0;
+    background: pink;
+    background: #333;
+    padding: $standard-padding;
+
+    textarea {
+        height: 100%;
+    }
+}
+
+.despot {
+    position: absolute;
+    bottom: $standard-padding;
+    right: $standard-padding;
+}
+
+.right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 50%;
+    bottom: 0;
+    padding: $standard-padding;
+    overflow: auto;
+}

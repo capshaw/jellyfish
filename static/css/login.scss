@@ -1,0 +1,75 @@
+@import "constants.scss";
+
+.login-container {
+    $width: 250px;
+    $height: 200px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    width: $width;
+    height: $height;
+    margin-top: -$height/2;
+    margin-left: -$width/2;
+
+    font-size: $font-size;
+
+    .text-input {
+        width: $width - $standard-padding * 2;
+        border: 1px solid #aaa;
+        outline: none;
+        padding: $standard-padding;
+        margin-top: $standard-padding / 2;
+
+        font-size: $font-size;
+
+                transition: all 0.25s ease-in-out;
+        -webkit-transition: all 0.25s ease-in-out;
+           -moz-transition: all 0.25s ease-in-out;
+
+        &:focus {
+            border: 1px solid $accent;
+
+                    box-shadow: 0 0 5px $accent;
+            -webkit-box-shadow: 0 0 5px $accent;
+               -moz-box-shadow: 0 0 5px $accent;
+        }
+    }
+
+    .submit {
+
+        /* Browser bug: buttons render differently than input boxes. */
+           -moz-box-sizing: content-box;
+        -webkit-box-sizing: content-box;
+                box-sizing: content-box;
+
+        width: $width - $standard-padding * 2;
+        padding: $standard-padding;
+        margin-top: $standard-padding / 2;
+        background: $accent;
+        color: #fff;
+        display: inline-block;
+        text-decoration: none;
+        border: 1px solid $accent;
+        text-align: center;
+
+        &:hover {
+            background: lighten($accent, 10%);
+        }
+    }
+
+    .failed-login {
+        width: $width;
+        margin-top: $standard-padding;
+        opacity: 0;
+
+                transition: all 0.25s ease-in-out;
+        -webkit-transition: all 0.25s ease-in-out;
+           -moz-transition: all 0.25s ease-in-out;
+
+        &.active {
+            opacity: 1;
+        }
+    }
+}
