@@ -1,0 +1,22 @@
+<div class='header'>
+    <span class='right-box' ng-show='user'>
+        <div class='user-image' ng-show='user' ng-style="{'background-image': 'url(' + user.image_url + ')'}"></div>
+        Hello, {{user.name}}!
+    </span>
+    <a class='right-box' href='' ng-click='logout()'>Logout</a>
+</div>
+
+<div class='content'>
+    <a ng-href='/#/add' class='button primary'>New Entry</a>
+    <div class='entries'>
+        <div class='entry' ng-repeat='entry in entries'>
+            <div class='writing' ng-bind-html-unsafe='markdown(entry.content)'></div>
+            <a href='' ng-click='deleteEntry(entry.id, $index)'>Delete</a>
+            &middot;
+            <a ng-href='/#/edit/{{entry.id}}'>Edit</a>
+        </div>
+        <div class='entry' ng-show='entries.length == 0'>
+            <p class='writing'>There are no entries yet! You should fix that by writing one now :)</p>
+        </div>
+    </div>
+</div>
