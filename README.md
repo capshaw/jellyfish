@@ -8,7 +8,7 @@ Supports markdown and will eventually have a robust API for accessing public ent
 
 *As a note, the following process will eventually be made easier and more automated.*
 
-To run jellyfish you'll need to create a new file called `config.py` that contains two keys: a `secret_key` used for maintaining secure sessions and a `hash_key` used as an extra salt when hashing passwords (along with the user-specific salts).
+To run jellyfish you'll need to create a new file called `config.py` that contains two keys: a `secret_key` used for maintaining secure sessions and a `hash_key` used as an extra salt when hashing passwords (used along with the user-specific salts).
 
 You'll also need to instantiate a database, and create an initial user. (There's currently no user-friendly way of creating users or signing up.)  Your bootstrapping function could look something like this:
 
