@@ -4,6 +4,8 @@ Stream of consciousness writing repository. The point of jellyfish is to make th
 
 Supports markdown and will eventually have a robust API for accessing public entries.
 
+![Home screen](static/img/screenshots/home.png)
+
 ## Running jellyfish
 
 *As a note, the following process will eventually be made easier and more automated.*
