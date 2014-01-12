@@ -12,6 +12,7 @@ empty_response = Response('', status=201)
 not_found = Response('Not Found', status=404)
 not_authorized = Response('Not Authorized', status=401)
 bad_request = Response('Bad Request', status=400)
+im_a_teapot = Response('I\'m a Teapot', status=418)
 
 ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 

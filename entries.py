@@ -11,9 +11,8 @@ entries_api = Blueprint('entries_api', __name__)
 @entries_api.route('/entries', methods=['GET'])
 @login_required
 def get_entries():
-
+    
     # TODO: probably deprecate in favor of using /feed/<user_id>/<page>
-
     # Get all entries that the currently logged-in user has posted.
     user_id = session['user_id']
     entries = Entry.query.filter_by(user_id=user_id).all()

@@ -23,14 +23,16 @@ def get_feed(user_id, page):
     if page < 1:
         return bad_request
 
-    query = Entry.query.filter_by(user_id=user_id).order_by(desc(Entry.id))
+    # Lets us obtain the total count of all entries in this feed.
+    base_query = Entry.query.filter_by(user_id=user_id).order_by(desc(Entry.id))
 
-    # The offset is one less than the user-friendly page number.
+    # The programmatic offset is one less than the user-friendly page number.
     page -= 1
-    entries = query.limit(ENTRIES_PER_PAGE).offset(page * ENTRIES_PER_PAGE)
-    entries = [e.serialize() for e in entries]
 
-    total_pages = ceil(query.count() / (1.0 * ENTRIES_PER_PAGE))
+    entries = base_query.limit(ENTRIES_PER_PAGE).offset(page * ENTRIES_PER_PAGE)
+    entries = [e.serialize() for e in entries]
+    total_pages = ceil(base_query.count() / (1.0 * ENTRIES_PER_PAGE))
+
     return jsonify({
         'page': page + 1,
         'total_pages': total_pages,
