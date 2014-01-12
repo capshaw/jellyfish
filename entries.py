@@ -20,7 +20,9 @@ def get_entries():
     entries = [e.serialize() for e in entries]
     entries.reverse()
 
-    return jsonify({ 'entries': entries })
+    return jsonify({ 
+        'entries': entries 
+    })
 
 @entries_api.route('/entries/<id>', methods=['GET'])
 @login_required
@@ -33,7 +35,9 @@ def get_entry(id):
     if not entry or entry.user_id != user_id:
         return not_authorized
 
-    return jsonify({ 'entry': entry.serialize() })
+    return jsonify({ 
+        'entry': entry.serialize() 
+    })
 
 @entries_api.route('/entries/<id>', methods=['PUT'])
 @login_required
@@ -53,7 +57,9 @@ def update_entry(id):
     entry.content = request.json['content']
     database.db_session.commit()
 
-    return jsonify({ 'entry': entry.serialize() })
+    return jsonify({ 
+        'entry': entry.serialize() 
+    })
 
 @entries_api.route('/entries', methods=['POST'])
 @login_required
@@ -72,7 +78,9 @@ def post_new_entry():
     database.db_session.add(new_entry)
     database.db_session.commit()
 
-    return jsonify({ 'entry': new_entry.serialize() })
+    return jsonify({ 
+        'entry': new_entry.serialize() 
+    })
 
 
 @entries_api.route('/entries/<id>', methods=['DELETE'])

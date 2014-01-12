@@ -29,7 +29,11 @@ def login():
         return not_authorized
     else:
         session['user_id'] = user.id
-        return jsonify(name=user.name, email=user.email, id=user.id)
+        return jsonify({
+            'name'  : user.name, 
+            'email' : user.email, 
+            'id'    : user.id
+        })
 
 @authenticate_api.route('/logout', methods=['POST'])
 def logout():
@@ -46,6 +50,10 @@ def user():
     if 'user_id' in session:
         user_id = session['user_id']
         user = User.query.filter_by(id=user_id).first()
-        return jsonify(name=user.name, email=user.email, id=user.id)
+        return jsonify({
+            'name'  : user.name, 
+            'email' : user.email, 
+            'id'    : user.id
+        })
     else:
         return not_authorized
