@@ -82,7 +82,6 @@ def post_new_entry():
         'entry': new_entry.serialize() 
     })
 
-
 @entries_api.route('/entries/<id>', methods=['DELETE'])
 @login_required
 def delete_entry(id):
