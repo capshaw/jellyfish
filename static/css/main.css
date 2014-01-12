@@ -1,7 +1,9 @@
 body, html {
   background: #eee;
   font-family: sans-serif;
-  font-size: 14px; }
+  font-size: 14px;
+  margin: 0;
+  padding: 0; }
 
 .button {
   padding: 10px;
@@ -39,19 +41,14 @@ body, html {
 .header {
   background: #333533;
   line-height: 60px;
-  color: #fff; }
-  .header .title {
-    display: inline-block;
-    height: 60px;
-    padding-left: 20px;
-    font-weight: bold; }
+  color: #fff;
+  text-align: right; }
   .header .right-box {
     display: inline-block;
     height: 60px;
-    float: right;
     border-left: 1px solid #222;
     height: 100%;
-    padding: 0 10px; }
+    padding: 0 20px; }
   .header .user-image {
     height: 40px;
     width: 40px;

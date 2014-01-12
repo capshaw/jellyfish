@@ -1,16 +1,9 @@
 <div class='header'>
-<!--     <div class='title'>
-            <div class='small-fish white'></div>
-            Jellyfish
-    </div>
- -->
-    &nbsp; <!-- HACK: need to remove float -->
-
-    <a class='right-box' href='' ng-click='logout()'>Logout</a>
-    <div class='right-box' ng-show='user'>
+    <span class='right-box' ng-show='user'>
         <div class='user-image' ng-show='user' ng-style="{'background-image': 'url(' + user.image_url + ')'}"></div>
         Hello, {{user.name}}!
-    </div>
+    </span>
+    <a class='right-box' href='' ng-click='logout()'>Logout</a>
 </div>
 
 <div class='content'>
