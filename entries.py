@@ -5,11 +5,14 @@ from flask import (request, render_template, session, Blueprint, jsonify, g)
 from models import Entry
 from util import *
 
+# API for user-specific entry access.
 entries_api = Blueprint('entries_api', __name__)
 
 @entries_api.route('/entries', methods=['GET'])
 @login_required
 def get_entries():
+
+    # TODO: probably deprecate in favor of using /feed/<user_id>/<page>
 
     # Get all entries that the currently logged-in user has posted.
     user_id = session['user_id']
