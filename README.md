@@ -1,8 +1,9 @@
 # jellyfish
 
-Stream of consciousness writing repository. The point of jellyfish is to make the writing and maintaining of notes painless. Less clutter and thought concerning the medium, more thought about the writing.
+Stream of consciousness writing repository. The point of jellyfish is to make the writing and maintaining of markdown notes and essays painless. Less clutter and thought concerning the medium, more thought about the writing.
 
-Supports markdown and will eventually have a robust API for accessing public entries.
+Since jellyfish is meant to be used as a utility for maintaining notes and not the public frontend of the notes themselves, a robust API for accessing public entries is planned. The `sample-client/` directory contains the most minimal of examples of a client that utilized the feed API.
+. 
 
 ![Home screen](static/img/screenshots/home.png)
 
