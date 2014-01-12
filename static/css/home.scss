@@ -8,20 +8,25 @@
     color: #fff;
     text-align: right;
 
-    .right-box {
-        display: inline-block;
-        height: $height;
-        border-left: 1px solid #222;
-        height: 100%;
-        padding: 0 $standard-padding * 2;
-    }
-
     .user-image {
         height: 40px;
         width: 40px;
         display: inline-block;
         vertical-align: middle;
         margin-right: $standard-padding;
+    }
+
+    a, span {
+        display: inline-block;
+        height: $height - 2px;
+        border: 1px solid #333533;
+        border-left: 1px solid #222;
+        height: 100%;
+        padding: 0 $standard-padding * 2;
+
+        &:last-child {
+            border-right: 1px solid #222;
+        }
     }
 
     a {
@@ -35,9 +40,7 @@
 }
 
 .content {
-    max-width: 800px;
-    margin: auto;
-    margin-top: $standard-padding * 2;
+    margin-top: $standard-padding;
 }
 
 .entries {

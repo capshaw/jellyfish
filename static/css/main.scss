@@ -34,6 +34,15 @@ body, html {
     }
 }
 
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+.float-left {
+    float: left;
+}
+
 @import "home.scss";
 @import "add.scss";
 @import "login.scss";

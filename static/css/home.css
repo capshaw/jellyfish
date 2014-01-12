@@ -3,18 +3,21 @@
   line-height: 60px;
   color: #fff;
   text-align: right; }
-  .header .right-box {
-    display: inline-block;
-    height: 60px;
-    border-left: 1px solid #222;
-    height: 100%;
-    padding: 0 20px; }
   .header .user-image {
     height: 40px;
     width: 40px;
     display: inline-block;
     vertical-align: middle;
     margin-right: 10px; }
+  .header a, .header span {
+    display: inline-block;
+    height: 58px;
+    border: 1px solid #333533;
+    border-left: 1px solid #222;
+    height: 100%;
+    padding: 0 20px; }
+    .header a:last-child, .header span:last-child {
+      border-right: 1px solid #222; }
   .header a {
     color: #fff;
     text-decoration: none; }
@@ -22,9 +25,7 @@
       background: #444; }
 
 .content {
-  max-width: 800px;
-  margin: auto;
-  margin-top: 20px; }
+  margin-top: 10px; }
 
 .entries .add-entry {
   background: #6cad57;
