@@ -6,7 +6,18 @@ angular.module('app')
         var converter = new Showdown.converter();
 
         $scope.markdown = function (input) {
-            return converter.makeHtml(input);
+            if (input == null) {
+                return;
+            }
+
+            var html = converter.makeHtml(input);
+            var context = $('<div>' + html + '</div>');
+            $('pre code', context).each(function (x, i) {
+                var old_value = $(i).html();
+                var new_value = hljs.highlightAuto(old_value).value;
+                $(i).html(new_value);
+            });
+            return context.html();
         };
 
         $scope.deleteEntry = function (id, index) {
@@ -19,7 +30,8 @@ angular.module('app')
         return {
             restrict: 'E',
             scope: {
-                entry: '=entry'
+                entry: '=entry',
+                showOptions: '=showOptions'
             },
             controller: 'EntryCtrl',
             templateUrl: '/static/partials/entry.html'

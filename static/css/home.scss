@@ -43,37 +43,46 @@
     margin-top: $standard-padding;
 }
 
-.entries {
-    .add-entry {
-        background: $accent;
-        padding: $standard-padding;
-    }
 
-    .entry {
-        background: #fff;
-        padding: $standard-padding * 2;
-        margin-top: $standard-padding;
-    }
+.entry {
+    background: #fff;
+    padding: $standard-padding * 2;
+    margin-top: $standard-padding;
 
-    .writing {
-        font-family: 'Droid Serif', sans-serif;
-        font-size: 16px;
-        line-height: 1.5em;
-        font-style: normal;
-        font-weight: 400;
-        color: rgb(34, 34, 34);
-
-        p:first-child {
-            margin-top: 0;
-            padding-top: 0;
-        }
-    }
-
-    a {
+        a {
         color: rgb(34, 34, 34);
 
         &:hover {
             color: rgb(100, 100, 100);
         }
+    }
+}
+
+.writing {
+    font-family: 'Droid Serif', sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+    font-style: normal;
+    font-weight: 400;
+    color: rgb(34, 34, 34);
+
+    p:first-child {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    pre {
+        background: #eee;
+        padding: $standard-padding;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+    }
+
+    code {
+        color: rgb(10, 10, 10);
     }
 }

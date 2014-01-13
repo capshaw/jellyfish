@@ -40,4 +40,10 @@
     bottom: 0;
     padding: $standard-padding;
     overflow: auto;
+
+    .entry {
+        width: auto;
+        background: none;
+        padding: 0;
+    }
 }

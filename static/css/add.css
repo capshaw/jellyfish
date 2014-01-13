@@ -33,3 +33,7 @@
   bottom: 0;
   padding: 10px;
   overflow: auto; }
+  .right .entry {
+    width: auto;
+    background: none;
+    padding: 0; }

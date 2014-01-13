@@ -40,6 +40,10 @@ After that, you should be able to run `main.py` and be on your way!
 + Flask (0.10.1)
 + SQLAlchemy (0.9.1)
 + Angular.js (1.0.7)
++ Showdown.js
++ md5.js
++ Highlight.js (8.0)
++ JQuery (1.10.2) (Note: an unfortunate requirement that is only used in one place for a convinience selector. I want to remove this in the future.)
 
 ## License
 

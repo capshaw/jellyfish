@@ -16,7 +16,7 @@ angular.module('app')
         if ('entryId' in $routeParams) {
             $scope.entryId = $routeParams.entryId;
             apiService.getEntry($scope.entryId).then(function(data){
-                $scope.content = data.content;
+                $scope.entry = data;
                 $scope.edit = true;
             });
         }
@@ -36,13 +36,13 @@ angular.module('app')
         };
 
         $scope.postEntry = function () {
-            apiService.postEntry($scope.content).then(function(){
+            apiService.postEntry($scope.entry.content).then(function(){
                 $location.path('/home');
             });
         };
 
         $scope.updateEntry = function () {
-            apiService.updateEntry($scope.entryId, $scope.content).then(
+            apiService.updateEntry($scope.entryId, $scope.entry.content).then(
                 function(){
                 $location.path('/home');
             })

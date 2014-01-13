@@ -1,8 +1,8 @@
 <div class='left'>
-    <textarea name='content' class='unstyled-input' ng-model='content' spellcheck='false'></textarea>
+    <textarea name='content' class='unstyled-input' ng-model='entry.content' spellcheck='false'></textarea>
 </div>
 <div class='right entries'>
-    <div class='writing' ng-bind-html-unsafe='markdown(content)'></div>
+    <entry entry='entry'></entry>
 </div>
 <div class='despot'>
     <a href='#' class='button'>Cancel</a>

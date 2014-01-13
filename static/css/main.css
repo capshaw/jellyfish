@@ -59,27 +59,34 @@ body, html {
 .content {
   margin-top: 10px; }
 
-.entries .add-entry {
-  background: #6cad57;
-  padding: 10px; }
-.entries .entry {
+.entry {
   background: #fff;
   padding: 20px;
   margin-top: 10px; }
-.entries .writing {
+  .entry a {
+    color: #222222; }
+    .entry a:hover {
+      color: #646464; }
+
+.writing {
   font-family: 'Droid Serif', sans-serif;
   font-size: 16px;
   line-height: 1.5em;
   font-style: normal;
   font-weight: 400;
   color: #222222; }
-  .entries .writing p:first-child {
+  .writing p:first-child {
     margin-top: 0;
     padding-top: 0; }
-.entries a {
-  color: #222222; }
-  .entries a:hover {
-    color: #646464; }
+  .writing img {
+    max-width: 100%; }
+  .writing pre {
+    background: #eee;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc; }
+  .writing code {
+    color: #0a0a0a; }
 
 .unstyled-input {
   font-family: monospace;
@@ -116,6 +123,10 @@ body, html {
   bottom: 0;
   padding: 10px;
   overflow: auto; }
+  .right .entry {
+    width: auto;
+    background: none;
+    padding: 0; }
 
 .login-container {
   position: absolute;
