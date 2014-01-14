@@ -6,6 +6,42 @@ body, html {
   padding: 0;
   padding-bottom: 10px; }
 
+.container {
+  max-width: 800px;
+  margin: auto; }
+  .container .basic-sub {
+    background: #fff;
+    padding: 20px; }
+
+.float-left {
+  float: left; }
+
+.header {
+  background: #333533;
+  line-height: 60px;
+  height: 60px;
+  color: #fff;
+  text-align: right; }
+  .header .user-image {
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px; }
+  .header a, .header span {
+    display: inline-block;
+    height: 58px;
+    border: 1px solid #333533;
+    border-left: 1px solid #222;
+    padding: 0 20px; }
+    .header a:last-child, .header span:last-child {
+      border-right: 1px solid #222; }
+  .header a {
+    color: #fff;
+    text-decoration: none; }
+    .header a:hover {
+      background: #444; }
+
 .button {
   padding: 10px;
   display: inline-block;
@@ -22,39 +58,6 @@ body, html {
     border: 1px solid #6cad57; }
     .button.primary:hover {
       background: #8abe79; }
-
-.container {
-  max-width: 800px;
-  margin: auto; }
-
-.float-left {
-  float: left; }
-
-.header {
-  background: #333533;
-  line-height: 60px;
-  color: #fff;
-  text-align: right; }
-  .header .user-image {
-    height: 40px;
-    width: 40px;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 10px; }
-  .header a, .header span {
-    display: inline-block;
-    height: 58px;
-    border: 1px solid #333533;
-    border-left: 1px solid #222;
-    height: 100%;
-    padding: 0 20px; }
-    .header a:last-child, .header span:last-child {
-      border-right: 1px solid #222; }
-  .header a {
-    color: #fff;
-    text-decoration: none; }
-    .header a:hover {
-      background: #444; }
 
 .content {
   margin-top: 10px; }
@@ -100,15 +103,15 @@ body, html {
 
 .left {
   position: absolute;
-  top: 0;
+  top: 60px;
   left: 0;
   right: 50%;
   bottom: 0;
-  background: pink;
-  background: #333;
+  background: #eee;
   padding: 10px; }
   .left textarea {
-    height: 100%; }
+    height: 100%;
+    color: #111; }
 
 .despot {
   position: absolute;
@@ -117,10 +120,11 @@ body, html {
 
 .right {
   position: absolute;
-  top: 0;
+  top: 60px;
   right: 0;
   left: 50%;
   bottom: 0;
+  background: #fff;
   padding: 10px;
   overflow: auto; }
   .right .entry {

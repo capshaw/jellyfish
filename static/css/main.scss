@@ -9,6 +9,57 @@ body, html {
     padding-bottom: $standard-padding;
 }
 
+.container {
+    max-width: 800px;
+    margin: auto;
+
+    .basic-sub {
+        background: #fff;
+        padding: $standard-padding * 2;
+    }
+}
+
+.float-left {
+    float: left;
+}
+
+.header {
+    background: #333533;
+    line-height: $header-height;
+    height: $header-height;
+    color: #fff;
+    text-align: right;
+
+    .user-image {
+        height: 40px;
+        width: 40px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: $standard-padding;
+    }
+
+    a, span {
+        display: inline-block;
+        height: $header-height - 2px;
+        border: 1px solid #333533;
+        border-left: 1px solid #222;
+        padding: 0 $standard-padding * 2;
+
+        &:last-child {
+            border-right: 1px solid #222;
+        }
+    }
+
+    a {
+        color: #fff;
+        text-decoration: none;
+
+        &:hover {
+            background: #444;
+        }
+    }
+}
+
 .button {
     padding: $standard-padding;
     display: inline-block;
@@ -32,15 +83,6 @@ body, html {
             background: lighten($accent, 10%);
         }
     }
-}
-
-.container {
-    max-width: 800px;
-    margin: auto;
-}
-
-.float-left {
-    float: left;
 }
 
 @import "home.scss";

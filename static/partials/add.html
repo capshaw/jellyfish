@@ -1,10 +1,14 @@
+<div class='header'>
+    <a href='#'>
+        Cancel
+    </a><!--
+    --><a ng-click='saveEntry()' href='' class='button primary'>
+        Save Note
+    </a>
+</div>
 <div class='left'>
-    <textarea name='content' class='unstyled-input' ng-model='entry.content' spellcheck='false'></textarea>
+    <textarea id='source' name='content' class='unstyled-input' ng-model='entry.content' spellcheck='false'></textarea>
 </div>
 <div class='right entries'>
     <entry entry='entry'></entry>
-</div>
-<div class='despot'>
-    <a href='#' class='button'>Cancel</a>
-    <a ng-click='saveEntry()' href='' class='button primary'>Save Note</a>
 </div>

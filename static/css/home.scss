@@ -1,48 +1,8 @@
 @import "constants.scss";
 
-.header {
-    $height: 60px;
-
-    background: #333533;
-    line-height: $height;
-    color: #fff;
-    text-align: right;
-
-    .user-image {
-        height: 40px;
-        width: 40px;
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: $standard-padding;
-    }
-
-    a, span {
-        display: inline-block;
-        height: $height - 2px;
-        border: 1px solid #333533;
-        border-left: 1px solid #222;
-        height: 100%;
-        padding: 0 $standard-padding * 2;
-
-        &:last-child {
-            border-right: 1px solid #222;
-        }
-    }
-
-    a {
-        color: #fff;
-        text-decoration: none;
-
-        &:hover {
-            background: #444;
-        }
-    }
-}
-
 .content {
     margin-top: $standard-padding;
 }
-
 
 .entry {
     background: #fff;

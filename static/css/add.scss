@@ -13,16 +13,16 @@
 
 .left {
     position: absolute;
-    top: 0;
+    top: $header-height;
     left: 0;
     right: 50%;
     bottom: 0;
-    background: pink;
-    background: #333;
+    background: #eee;
     padding: $standard-padding;
 
     textarea {
         height: 100%;
+        color: #111;
     }
 }
 
@@ -34,10 +34,11 @@
 
 .right {
     position: absolute;
-    top: 0;
+    top: $header-height;
     right: 0;
     left: 50%;
     bottom: 0;
+    background: #fff;
     padding: $standard-padding;
     overflow: auto;
 

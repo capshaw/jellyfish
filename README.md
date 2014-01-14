@@ -43,7 +43,8 @@ After that, you should be able to run `main.py` and be on your way!
 + Showdown.js
 + md5.js
 + Highlight.js (8.0)
-+ JQuery (1.10.2) (Note: an unfortunate requirement that is only used in one place for a convinience selector. I want to remove this in the future.)
++ JQuery (1.10.2)
++ [taboverride.js](https://github.com/wjbryant/taboverride)
 
 ## License
 

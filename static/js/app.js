@@ -20,6 +20,10 @@ app.config(function($routeProvider) {
             templateUrl: '/static/partials/add.html',
             controller: 'AddCtrl'
         }).
+        when('/settings', {
+            templateUrl: '/static/partials/settings.html',
+            controller: 'SettingsCtrl'
+        }).
         otherwise({
             redirectTo: '/home'
         });

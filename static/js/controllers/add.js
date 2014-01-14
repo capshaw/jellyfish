@@ -21,6 +21,9 @@ angular.module('app')
             });
         }
 
+        var source_textarea = document.getElementById('source');
+        tabOverride.set(source_textarea);
+
         var converter = new Showdown.converter();
 
         $scope.markdown = function (input) {
