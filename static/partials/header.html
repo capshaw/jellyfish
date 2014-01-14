@@ -1,0 +1,21 @@
+<div class='header'>
+    <div class='container'>
+        <a ng-href='/#/add' class='button primary float-left'>
+            <i class='fa fa-plus'></i>
+            New Entry
+        </a>
+        <span ng-show='user'>
+            <div class='user-image'
+                 ng-show='user'
+                 ng-style="{'background-image':'url(' + user.image_url + ')'}">
+            </div>
+            Hello, {{user.name}}!
+        </span>
+        <a ng-href='/#/settings'>
+            <i class='fa fa-gear'></i>
+        </a><!--
+        --><a href='' ng-click='logout()'>
+            Logout
+        </a>
+    </div>
+</div>

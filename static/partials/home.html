@@ -1,19 +1,4 @@
-<div class='header'>
-    <div class='container'>
-        <a ng-href='/#/add' class='button primary  float-left'>
-            <i class='fa fa-plus'></i>
-            New Entry
-        </a>
-        <span ng-show='user'>
-            <div class='user-image'
-                 ng-show='user'
-                 ng-style="{'background-image':'url(' + user.image_url + ')'}">
-            </div>
-            Hello, {{user.name}}!
-        </span>
-        <a href='' ng-click='logout()'>Logout</a>
-    </div>
-</div>
+<header></header>
 <div class='content container'>
     <div class='entries'>
         <entry entry='entry' show-options='true' ng-repeat='entry in entries'></entry>
