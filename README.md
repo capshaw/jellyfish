@@ -37,16 +37,21 @@ After that, you should be able to run `main.py` and be on your way!
 + *Isn't this just blogging software?* Kind of, but not really. The API certainly could allow you to build a blog off of it, but I wouldn't suggest it. For blogging, I'd suggest something more robust and feature-rich, like [Ghost](https://github.com/TryGhost/Ghost).
 
 ## Dependencies
+
+### System Installed
 + Flask (0.10.1)
 + SQLAlchemy (0.9.1)
-+ Angular.js (1.0.7)
-+ Showdown.js
-+ md5.js
-+ Highlight.js (8.0)
-+ JQuery (1.10.2)
+
+### Included Library Dependencies
++ [Angular.js](http://www.angularjs.org/) (1.0.7)
++ [Showdown.js](https://github.com/coreyti/showdown)
++ [md5.js](http://pajhome.org.uk/crypt/md5) (2.2)
++ [Highlight.js](http://highlightjs.org/) (8.0)
++ [JQuery](http://jquery.com/) (1.10.2)
 + [taboverride.js](https://github.com/wjbryant/taboverride)
++ [ngInfiniteScroll](http://binarymuse.github.io/ngInfiniteScroll/index.html)
 
 ## License
 
-MIT License
+Licensed under the MIT License. See LICENSE for more details.
 
