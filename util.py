@@ -6,6 +6,10 @@ from flask import g, request, redirect, url_for, session
 from werkzeug.wrappers import BaseResponse as Response
 
 from hashlib import sha512
+from math import ceil
+
+# The default number of entries to page when paginating. 
+ENTRIES_PER_PAGE = 10
 
 # Various reusable responses.
 empty_response = Response('', status=201)
@@ -31,6 +35,13 @@ def is_session_current():
     if 'user_id' in session:
         return True
     return False
+
+def paginate_helper(query, page, entries_per_page=ENTRIES_PER_PAGE):
+    # Given a query and page, return a list of the elements on that page. 
+    offset = (page - 1) * entries_per_page
+    total_pages = ceil(query.count() / (1.0 * entries_per_page))
+    entries = query.limit(entries_per_page).offset(offset)
+    return (entries, total_pages)
 
 # TODO: make this redirect to the page that the user originally requested
 def login_required(f):

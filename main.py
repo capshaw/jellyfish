@@ -23,4 +23,4 @@ if __name__ == "__main__":
 
     # Note: the parameter "host='0.0.0.0'" allows one to view flask on the
     # local network at the host's public IP address.
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug=True)

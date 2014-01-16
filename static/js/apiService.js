@@ -24,9 +24,9 @@ app.factory('apiService', function($http, $q) {
                 });
             return d.promise;
         },
-        getEntries: function() {
+        getEntries: function(page) {
             var d = $q.defer();
-            $http({method: 'GET', url: '/entries'}).
+            $http({method: 'GET', url: '/entries/page:' + page}).
                 success(function(data, status, headers, config) {
                     d.resolve(data);
                 }).

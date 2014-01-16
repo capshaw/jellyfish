@@ -4,26 +4,12 @@ import database
 from flask import (request, render_template, session, Blueprint, jsonify, g)
 from models import Entry
 from util import *
+from sqlalchemy import desc
 
 # API for user-specific entry access.
 entries_api = Blueprint('entries_api', __name__)
 
-@entries_api.route('/entries', methods=['GET'])
-@login_required
-def get_entries():
-    
-    # TODO: probably deprecate in favor of using /feed/<user_id>/<page>
-    # Get all entries that the currently logged-in user has posted.
-    user_id = session['user_id']
-    entries = Entry.query.filter_by(user_id=user_id).all()
-    entries = [e.serialize() for e in entries]
-    entries.reverse()
-
-    return jsonify({
-        'entries': entries
-    })
-
-@entries_api.route('/entries/<id>', methods=['GET'])
+@entries_api.route('/entries/<int:id>', methods=['GET'])
 @login_required
 def get_entry(id):
 
@@ -38,7 +24,27 @@ def get_entry(id):
         'entry': entry.serialize()
     })
 
-@entries_api.route('/entries/<id>', methods=['PUT'])
+# TODO: is this most RESTful route to use?
+@entries_api.route('/entries/page:<int:page>', methods=['GET'])
+@login_required
+def get_entries_by_page(page):
+
+    if page < 1:
+        return bad_request
+
+    user_id = session['user_id']
+    base_query = Entry.query.filter_by(user_id=user_id).order_by(desc(Entry.id))
+
+    entries, total_pages = paginate_helper(base_query, page)
+    entries = [e.serialize() for e in entries]
+
+    return jsonify({
+        'page': page,
+        'total_pages': total_pages,
+        'entries': entries
+    })
+
+@entries_api.route('/entries/<int:id>', methods=['PUT'])
 @login_required
 def update_entry(id):
 
@@ -81,7 +87,7 @@ def post_new_entry():
         'entry': new_entry.serialize()
     })
 
-@entries_api.route('/entries/<id>', methods=['DELETE'])
+@entries_api.route('/entries/<int:id>', methods=['DELETE'])
 @login_required
 def delete_entry(id):
 

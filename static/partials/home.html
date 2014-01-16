@@ -1,5 +1,5 @@
 <header></header>
-<div class='content container'>
+<div class='content container' infinite-scroll='loadMoreEntries()' infinite-scroll-distance='3'>
     <div class='entries'>
         <entry entry='entry' show-options='true' ng-repeat='entry in entries'></entry>
         <div class='entry' ng-show='entries.length == 0'>
