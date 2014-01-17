@@ -8,11 +8,11 @@ from werkzeug.wrappers import BaseResponse as Response
 from hashlib import sha512
 from math import ceil
 
-# The default number of entries to page when paginating. 
+# The default number of entries to page when paginating.
 ENTRIES_PER_PAGE = 10
 
 # Various reusable responses.
-empty_response = Response('', status=201)
+empty_response = Response('')
 not_found = Response('Not Found', status=404)
 not_authorized = Response('Not Authorized', status=401)
 bad_request = Response('Bad Request', status=400)
@@ -37,7 +37,7 @@ def is_session_current():
     return False
 
 def paginate_helper(query, page, entries_per_page=ENTRIES_PER_PAGE):
-    # Given a query and page, return a list of the elements on that page. 
+    # Given a query and page, return a list of the elements on that page.
     offset = (page - 1) * entries_per_page
     total_pages = ceil(query.count() / (1.0 * entries_per_page))
     entries = query.limit(entries_per_page).offset(offset)
