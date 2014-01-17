@@ -7,7 +7,7 @@ angular.module('app')
         apiService.getUser().then(function () {
             // Great, they're logged in.
         }, function (data){
-            $location.path('/home');
+            $location.path('/login');
         });
 
         // When 'add,' content is empty to begin with. Otherwise, load the

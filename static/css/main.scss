@@ -23,6 +23,21 @@ body, html {
     float: left;
 }
 
+.loading {
+    $size: 32px;
+    background: url(/static/img/loading.gif);
+    width: $size;
+    height: $size;
+
+    &.center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -1 * $size / 2;
+        margin-left: -1 * $size / 2;
+    }
+}
+
 .header {
     background: #333533;
     line-height: $header-height;

@@ -5,6 +5,10 @@ var app = angular.module('app', ['infinite-scroll']);
 app.config(function($routeProvider) {
     $routeProvider.
         when('/', {
+            templateUrl: '/static/partials/loading.html',
+            controller: 'LoadingCtrl'
+        }).
+        when('/login', {
             templateUrl: '/static/partials/login.html',
             controller: 'LoginCtrl'
         }).
